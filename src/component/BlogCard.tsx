@@ -1,4 +1,3 @@
-
 import image1 from "../assets/blog_pic_1-Vndvg-NA.png";
 import image2 from "../assets/blog_pic_2-CubA8WLf.png";
 import image3 from "../assets/blog_pic_3-VOQeV7e1.png";
@@ -75,30 +74,32 @@ const blogs = [
 
 const BlogCard = () => {
   return (
-    <section className="p-5">
+    <section className="px-5 py-10 ">
+      <div className="grid grid-cols-1 gap-6">
         {blogs.map((blog) => (
-             <article className="overflow-hidden rounded-2xl border border-gray-200 bg-white" key={blog.title}>
-<img className="h-52 w-full object-cover" src={blog.image}
-alt={blog.title}
-/>
+          <article
+            className="overflow-hidden rounded-2xl  bg-white border border-gray-200 "
+            key={blog.title}
+          >
+            <img
+              className="h-56 w-full object-cover rounded-2xl"
+              src={blog.image}
+              alt={blog.title}
+            />
+            <div className="pt-4 m-6 ">
+              <span className="text-sm font-medium bg-gray-200 rounded-2xl px-4 m-3">
+                {blog.category}
+              </span>
+              <h2 className="mt-2 text-xl font-bold ">{blog.title}</h2>
+              <p className="mt-3 text-sm leading-6 text-gray-500">
+                {blog.description}
+              </p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+};
 
-<span className="text-sm font-medium text-blue-600">{blog.category}</span>
-<h2 className="mt-2 text-xl font-bold leading-tight">{blog.title}</h2>
-<p className="mt-3 text-sm leading-6 text-gray-600">{blog.description}</p>
-
-
- </article>
-        
-    
-    
-    
-    ))}
-     </section>
-    );
-
-
-  
-  
-}
-
-export default BlogCard
+export default BlogCard;
