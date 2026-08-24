@@ -5,13 +5,13 @@ import BlogCard from "./component/BlogCard"
 import Newaletters from "./component/Newaletters"
 const App = () => {
   return (
-  <>
+  <div>
   <Navbar/>
   <Hero/>
   <Blogfilter/>
   <BlogCard/>
   <Newaletters/>
-  </>
+</div>
   )
 }
 
