@@ -75,16 +75,16 @@ const blogs = [
 
 const BlogCard = () => {
   return (
-    <section>
+    <section className="p-5">
         {blogs.map((blog) => (
-             <article key={blog.title}>
-<img src={blog.image}
+             <article className="overflow-hidden rounded-2xl border border-gray-200 bg-white" key={blog.title}>
+<img className="h-52 w-full object-cover" src={blog.image}
 alt={blog.title}
 />
 
-<span>{blog.category}</span>
-<h2>{blog.title}</h2>
-<p>{blog.description}</p>
+<span className="text-sm font-medium text-blue-600">{blog.category}</span>
+<h2 className="mt-2 text-xl font-bold leading-tight">{blog.title}</h2>
+<p className="mt-3 text-sm leading-6 text-gray-600">{blog.description}</p>
 
 
  </article>
