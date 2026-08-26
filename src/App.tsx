@@ -2,7 +2,8 @@ import Navbar from "./component/Navbar"
 import Hero from "./component/Hero"
 import Blogfilter from "./component/Blogfilter"
 import BlogCard from "./component/BlogCard"
-import Newaletters from "./component/Newaletters"
+import Newsletter from "./component/Newletter"
+import Footer from "./component/Footer"
 const App = () => {
   return (
   <div>
@@ -10,9 +11,8 @@ const App = () => {
   <Hero/>
   <Blogfilter/>
   <BlogCard/>
-  <Newaletters/>
-</div>
-  )
-}
+  <Newsletter/>
+  <Footer/>
+  </div>)}
 
 export default App
