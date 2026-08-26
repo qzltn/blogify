@@ -4,6 +4,7 @@ import Blogfilter from "./component/Blogfilter"
 import BlogCard from "./component/BlogCard"
 import Newsletter from "./component/Newletter"
 import Footer from "./component/Footer"
+
 const App = () => {
   return (
   <div>
@@ -13,6 +14,8 @@ const App = () => {
   <BlogCard/>
   <Newsletter/>
   <Footer/>
+
+  
   </div>)}
 
 export default App
