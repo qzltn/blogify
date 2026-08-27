@@ -9,12 +9,12 @@ const AddBlog = () => {
           </h2>
         </div>
 
-        <div className="bg-gray-100 rounded-xl w-44 h-28 flex flex-col items-center justify-center cursor-pointer">
+        <div className="bg-gray-100 rounded-xl w-40 h-32 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-200 transition">
           <div className="text-3xl text-gray-400">
             ☁
           </div>
 
-          <p className="text-gray-400 mt-2">
+          <p className="text-gray-400 mt-2 text-sm">
             Upload
           </p>
         </div>
@@ -102,7 +102,11 @@ const AddBlog = () => {
 >
   Add Blog
 </button>
+<div className="mt-8">
+<label>blog title</label>
+</div>
     </div>
+    
   )
 }
 

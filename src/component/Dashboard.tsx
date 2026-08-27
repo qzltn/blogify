@@ -185,8 +185,6 @@ Importance of Tourism      </div>
         Unpublish
       </button>
     </div>
-
-   
     <div className="grid grid-cols-[60px_1fr_150px] items-center px-6 py-5 border-b hover:bg-gray-50">
       <div className="text-lg font-semibold text-gray-600">
         10
