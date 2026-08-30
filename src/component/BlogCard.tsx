@@ -80,9 +80,9 @@ const BlogCard = () => {
   return (
     <section className="px-5 py-10">
       <div className="grid grid-cols-1 gap-6">
-        {blogs.map((blog) => (
+        {blogs.map((blog,index) => (
           <article
-            key={blog.title}
+            key={index}
             className="overflow-hidden rounded-xl bg-white"
           >
             <img
