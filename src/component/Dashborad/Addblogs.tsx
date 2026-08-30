@@ -1,136 +1,177 @@
 import { useState } from "react";
 
-function AddBlog() {
-  const [image, setImage] = useState<string | null>(null);
-
-  const handleImageChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const file = event.target.files?.[0];
-
-    if (file) {
-      setImage(URL.createObjectURL(file));
-    }
-  };
+const AddBlog = () => {
+  const [image, setImage] = useState<File | null>(null);
 
   return (
-    <div className="mx-auto w-full max-w-4xl px-4 py-8">
+    <div className="w-full max-w-[700px] px-3 py-5 text-gray-700 dark:text-gray-200 sm:px-6">
 
-      {/* Page Title */}
-      <h1 className="mb-8 text-2xl font-semibold">
-        Add Blog
-      </h1>
-
-      {/* Upload Image */}
+      
       <div className="mb-7">
-        <label className="mb-3 block text-sm font-medium">
-          Blog Image
+        <label className="mb-2 block text-[15px] font-medium text-gray-700 dark:text-gray-200">
+          Upload thumbnail
         </label>
 
-        <label className="flex h-48 w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg border border-dashed border-gray-300 bg-white transition hover:bg-gray-50">
+        <label
+          htmlFor="thumbnail"
+          className="flex h-[105px] w-[180px] cursor-pointer flex-col items-center justify-center rounded-lg border border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-800"
+        >
+          <input
+            id="thumbnail"
+            type="file"
+            accept="image/*"
+            className="hidden"
+            onChange={(e) => {
+              if (e.target.files?.[0]) {
+                setImage(e.target.files[0]);
+              }
+            }}
+          />
 
           {image ? (
             <img
-              src={image}
-              alt="Blog preview"
-              className="h-full w-full object-cover"
+              src={URL.createObjectURL(image)}
+              alt="thumbnail"
+              className="h-full w-full rounded-lg object-cover"
             />
           ) : (
-            <div className="flex flex-col items-center text-gray-400">
-              <svg
-                width="35"
-                height="35"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <path d="M4 5h16v14H4z" />
-                <path d="m4 16 4-4 3 3 3-4 6 6" />
-                <circle cx="9" cy="9" r="1.5" />
-              </svg>
-
-              <span className="mt-2 text-sm">
-                Upload Image
+            <>
+              <span className="text-2xl text-gray-400 dark:text-gray-500">
+                ☁
               </span>
-            </div>
+
+              <span className="text-sm text-gray-400 dark:text-gray-500">
+                Upload
+              </span>
+            </>
           )}
-
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleImageChange}
-            className="hidden"
-          />
-
         </label>
       </div>
 
-      {/* Blog Title */}
-      <div className="mb-6">
-
-        <label className="mb-3 block text-sm font-medium">
-          Blog Title
-        </label>
-
-        <div className="flex gap-3">
-
-          <input
-            type="text"
-            placeholder="Type here"
-            className="h-12 flex-1 rounded-lg border border-gray-300 bg-white px-4 text-sm outline-none transition focus:border-gray-500"
-          />
-
-          <button
-            type="button"
-            className="h-12 shrink-0 rounded-lg bg-black px-5 text-sm font-medium text-white transition hover:bg-gray-800"
-          >
-            AI Generate
-          </button>
-
-        </div>
-
-      </div>
-
-      {/* Sub Title */}
-      <div className="mb-6">
-
-        <label className="mb-3 block text-sm font-medium">
-          Sub Title
+   
+      <div className="mb-5">
+        <label className="mb-2 block text-[15px] font-medium text-gray-700 dark:text-gray-200">
+          Blog title
         </label>
 
         <input
           type="text"
           placeholder="Type here"
-          className="h-12 w-full rounded-lg border border-gray-300 bg-white px-4 text-sm outline-none transition focus:border-gray-500"
+          className="h-[48px] w-full rounded-md border border-gray-300 bg-white px-3 text-sm text-gray-800 outline-none placeholder:text-gray-400 focus:border-gray-500 dark:border-gray-700 dark:bg-gray-900 dark:text-white dark:placeholder:text-gray-500"
         />
 
+        <button
+          type="button"
+          className="mt-3 flex h-[39px] items-center gap-2 rounded-md border border-gray-300 px-4 text-[13px] text-gray-700 transition hover:bg-gray-50 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800"
+        >
+          <span>✦</span>
+          AI Generate
+        </button>
       </div>
 
-      {/* Blog Description */}
-      <div className="mb-6">
+      
+      <div className="mb-5">
+        <label className="mb-2 block text-[15px] font-medium text-gray-700 dark:text-gray-200">
+          Sub title
+        </label>
 
-        <label className="mb-3 block text-sm font-medium">
+        <input
+          type="text"
+          placeholder="Type here"
+          className="h-[48px] w-full rounded-md border border-gray-300 bg-white px-3 text-sm text-gray-800 outline-none placeholder:text-gray-400 focus:border-gray-500 dark:border-gray-700 dark:bg-gray-900 dark:text-white dark:placeholder:text-gray-500"
+        />
+      </div>
+
+      
+      <div className="mb-5">
+        <label className="mb-2 block text-[15px] font-medium text-gray-700 dark:text-gray-200">
           Blog Description
         </label>
 
-        <textarea
-          placeholder="Type here"
-          className="min-h-[220px] w-full resize-none rounded-lg border border-gray-300 bg-white p-4 text-sm outline-none transition focus:border-gray-500"
-        />
+        <div className="overflow-hidden rounded-md border border-gray-300 bg-white dark:border-gray-700 dark:bg-gray-900">
 
+          
+          <div className="flex h-[82px] items-start gap-4 border-b border-gray-200 px-4 py-3 text-gray-600 dark:border-gray-700 dark:text-gray-300 sm:gap-5">
+
+            <button type="button" className="text-sm">
+              Normal
+            </button>
+
+            <button type="button" className="font-bold">
+              B
+            </button>
+
+            <button type="button" className="italic">
+              I
+            </button>
+
+            <button type="button" className="underline">
+              U
+            </button>
+
+            <button type="button">
+              🔗
+            </button>
+
+            <button type="button">
+              ☷
+            </button>
+
+            <button type="button">
+              ≣
+            </button>
+
+            <button type="button">
+              Tₓ
+            </button>
+
+          </div>
+
+        
+          <div
+            contentEditable
+            suppressContentEditableWarning
+            className="h-[250px] px-4 py-3 text-sm text-gray-800 outline-none dark:text-gray-200"
+          />
+        </div>
       </div>
 
-      {/* Publish Button */}
+     
+      <div className="mb-4">
+        <label className="mb-2 block text-[15px] font-medium text-gray-700 dark:text-gray-200">
+          Blog category
+        </label>
+
+        <select className="h-[40px] w-[180px] rounded-md border border-gray-300 bg-white px-3 text-sm text-gray-500 outline-none dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300">
+          <option value="">Select category</option>
+          <option value="Technology">Technology</option>
+          <option value="Startup">Startup</option>
+          <option value="Lifestyle">Lifestyle</option>
+          <option value="Business">Business</option>
+          <option value="Travel">Travel</option>
+        </select>
+        </div>
+
+     
+      <label className="mb-5 flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+        <span>Publish Now</span>
+
+        <input
+          type="checkbox"
+          className="h-4 w-4 accent-black dark:accent-white"
+        />
+      </label>
+
+      
       <button
         type="button"
-        className="rounded-lg bg-black px-7 py-3 text-sm font-medium text-white transition hover:bg-gray-800"
+        className="h-[43px] w-[175px] rounded-md bg-black text-sm font-medium text-white transition hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
       >
-        Publish Blog
+        Add Blog
       </button>
 
     </div>
   );
-}
+};
 
 export default AddBlog;

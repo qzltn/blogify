@@ -2,9 +2,9 @@ import logo from "../assets/logo-DenxwkUa.svg";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-gray-200 bg-white px-6 pt-10 text-gray-500">
+    <footer className="border-t border-gray-200 bg-white px-6 pt-10 text-gray-500 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-400">
       <div>
-       
+
         <div>
           <img
             src={logo}
@@ -12,16 +12,13 @@ const Footer = () => {
             className="w-32"
           />
 
-          <p className="mt-5 max-w-md text-sm leading-6">
-          
-          </p>
+          <p className="mt-5 max-w-md text-sm leading-6"></p>
         </div>
 
-    
         <div className="mt-10 grid grid-cols-3 gap-4">
-          
+
           <div>
-            <h3 className="font-semibold text-gray-800">
+            <h3 className="font-semibold text-gray-800 dark:text-white">
               Quick Links
             </h3>
 
@@ -35,7 +32,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-semibold text-gray-800">
+            <h3 className="font-semibold text-gray-800 dark:text-white">
               Need Help?
             </h3>
 
@@ -49,7 +46,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-semibold text-gray-800">
+            <h3 className="font-semibold text-gray-800 dark:text-white">
               Follow Us
             </h3>
 
@@ -64,8 +61,7 @@ const Footer = () => {
         </div>
       </div>
 
-    
-      <div className="mt-10 border-t border-gray-200 py-5 text-center text-xs">
+      <div className="mt-10 border-t border-gray-200 py-5 text-center text-xs dark:border-gray-800">
         Copyright 2026 © Blogify GreatStack - All Right Reserved.
       </div>
     </footer>

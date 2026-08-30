@@ -1,19 +1,27 @@
-
-
 function Blogfilter() {
   return (
-   <section className="flex flex-col items-center gap-8 py-8">
+    <section className="flex flex-col items-center gap-8 py-8 dark:bg-gray-950">
 
-<div className="flex flex-wrap justify-center gap-8 text-gray-600">
-    <button>technology</button>
-    <button>startup</button>
-    <button>lifestyle</button>
-    <button>finance</button>
-</div>
+      <div className="flex flex-wrap justify-center gap-8 text-gray-600 dark:text-gray-400">
+        <button className="hover:text-black dark:hover:text-white">
+          technology
+        </button>
 
+        <button className="hover:text-black dark:hover:text-white">
+          startup
+        </button>
 
-   </section>
-  )
+        <button className="hover:text-black dark:hover:text-white">
+          lifestyle
+        </button>
+
+        <button className="hover:text-black dark:hover:text-white">
+          finance
+        </button>
+      </div>
+
+    </section>
+  );
 }
 
-export default Blogfilter
+export default Blogfilter;
